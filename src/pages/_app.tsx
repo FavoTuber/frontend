@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import customTheme from 'theme';
+import HeaderNav from 'components/HeaderNav';
 import { ChakraProvider } from '@chakra-ui/react';
 
 interface Props {
@@ -23,6 +24,7 @@ export default class App extends React.Component<Props> {
           />
         </Head>
         <ChakraProvider theme={customTheme}>
+          <HeaderNav />
           <Component {...pageProps} />
         </ChakraProvider>
       </>
