@@ -48,7 +48,7 @@
       "^.+\\.(ts|tsx)$": "ts-jest"
     },
     "testMatch": [
-      "**/__tests__/*.(ts|tsx)"
+      "**/__tests__/**/*.(ts|tsx)"
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/jest.setup.ts"
@@ -61,6 +61,10 @@
       "ts-jest": {
         "tsconfig": "tsconfig.jest.json"
       }
-    }
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
   }
 }
