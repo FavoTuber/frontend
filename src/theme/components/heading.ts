@@ -18,6 +18,10 @@ const sizes = {
     my: 8,
     fontSize: ['heading.smaller', 'heading.small', 'heading.small'],
   },
+  card: {
+    my: 4,
+    fontSize: ['0.85em', '0.9em', '1.0em', '1.1em'],
+  },
 };
 
 function defaultVariant(props: Dict): Dict {
