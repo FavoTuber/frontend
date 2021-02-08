@@ -1,3 +1,4 @@
+import type { StorybookConfig } from '@storybook/core/types';
 const path = require('path');
 
 const toPath = (_path) => path.join(process.cwd(), _path);
@@ -35,4 +36,4 @@ module.exports = {
       },
     };
   },
-};
+} as StorybookConfig;
