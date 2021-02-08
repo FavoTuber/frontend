@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# snapshots
+__image_snapshots__
