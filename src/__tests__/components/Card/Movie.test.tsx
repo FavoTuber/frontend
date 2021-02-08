@@ -5,17 +5,17 @@ import MovieCard from 'components/Card/Movie';
 
 describe('Check card component', () => {
   it('MovieCard shows "TEST" in a <Heading> tag', () => {
-    const app = shallow(<MovieCard thumbnailUrl="" title="TEST" />);
+    const app = shallow(<MovieCard linkUrl="/" thumbnailUrl="" title="TEST" />);
     expect(app.find('Heading').text()).toEqual('TEST');
   });
 
   it('MovieCard shows "ABC" in a <Heading> tag', () => {
-    const app = shallow(<MovieCard thumbnailUrl="" title="ABC" />);
+    const app = shallow(<MovieCard linkUrl="/" thumbnailUrl="" title="ABC" />);
     expect(app.find('Heading').text()).toEqual('ABC');
   });
 
   it('MovieCard do not shows "ABC" in a <Heading> tag', () => {
-    const app = shallow(<MovieCard thumbnailUrl="" title="EFG" />);
+    const app = shallow(<MovieCard linkUrl="/" thumbnailUrl="" title="EFG" />);
     expect(app.find('Heading').text()).not.toBe('ABC');
   });
 });
