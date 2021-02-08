@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Box, Flex, Image, Avatar, Heading, Text } from '@chakra-ui/react';
+import { Link, Box, Image, Heading } from '@chakra-ui/react';
 
 type Props = {
   thumbnailUrl: string;
