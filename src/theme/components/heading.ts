@@ -20,7 +20,7 @@ const sizes = {
   },
   card: {
     my: 4,
-    fontSize: ['heading.default', 'heading.default', 'heading.medium'],
+    fontSize: ['0.85em', '0.9em', '1.0em', '1.1em'],
   },
 };
 
