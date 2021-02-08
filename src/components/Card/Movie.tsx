@@ -2,14 +2,15 @@ import React from 'react';
 import { Link, Box, Image, Heading } from '@chakra-ui/react';
 
 type Props = {
+  linkUrl: string;
   thumbnailUrl: string;
   title: string;
 };
 
-const MovieCard: React.FC<Props> = ({ thumbnailUrl, title }) => {
+const MovieCard: React.FC<Props> = ({ linkUrl, thumbnailUrl, title }) => {
   return (
     <Box w="full" overflow="hidden">
-      <Link href="/movie/test">
+      <Link href={linkUrl}>
         <Box>
           <Image src={thumbnailUrl} alt={title} />
         </Box>
