@@ -1,6 +1,6 @@
 import { mode } from '@chakra-ui/theme-tools';
 
-type Dict = Record<string, any>;
+type Dict = Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 const baseStyle = {
   _hover: {

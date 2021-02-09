@@ -37,7 +37,15 @@
   "rules": {
     "react/prop-types": "off",
     "prettier/prettier": "error",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "parameter",
+        "format": ["camelCase"]
+      }
+    ]
   },
   "overrides": [
     {

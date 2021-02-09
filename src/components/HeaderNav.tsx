@@ -42,7 +42,7 @@ const HeaderNav: React.FC = () => {
           pointerEvents="none"
           _selection={{ bgColor: 'transparent' }}
         />
-        <Heading mx={2} size="headerNav" variant="headerNav">
+        <Heading size="headerNav" variant="headerNav">
           FavoTuber
         </Heading>
       </Flex>

@@ -5,8 +5,8 @@ import HeaderNav from 'components/HeaderNav';
 import { ChakraProvider } from '@chakra-ui/react';
 
 interface Props {
-  pageProps: any;
-  Component: any;
+  pageProps: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  Component: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 export default class App extends React.Component<Props> {
