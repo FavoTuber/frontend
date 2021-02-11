@@ -7,7 +7,7 @@
     "build": "rm -rf ./build && NODE_ENV=production next build",
     "start": "next start -p 8080",
     "lint": "eslint -c .eslintrc.json src/** --ext .ts,.tsx",
-    "test": "jest ./__tests__",
+    "test": "jest ./tests",
     "storybook": "rm -rf ./node_modules/.cache && start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "puppeteer-storyshots": "jest ./storyshots"
