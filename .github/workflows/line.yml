@@ -1,0 +1,31 @@
+name: Review Request Notification
+
+on:
+  pull_request:
+    types: review_requested
+
+jobs:
+  Notify:
+    runs-on: ubuntu-latest
+    steps:
+      - id: pr
+        uses: actions/github-script@0.9.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number
+            })
+            const reviewer = context.payload.requested_reviewer.login
+            const reviewee = context.payload.sender.login
+            const prnumber = context.payload.pull_request.number
+            core.setOutput('reviewee', reviewee)
+            core.setOutput('reviewer', reviewer)
+            core.setOutput('pr-number', String(prnumber))
+
+      - uses: snow-actions/line-notify@v1.0.0
+        with:
+          access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
+          message: ${{steps.pr.outputs.reviewer}}+" さんにレビューのお願いが届いています。("+${{steps.pr.outputs.pr-number}}+")"
