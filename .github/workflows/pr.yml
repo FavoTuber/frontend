@@ -27,6 +27,11 @@ jobs:
     needs: Setup
     runs-on: ubuntu-latest
     steps:
+      - name: Enable node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
       - name: Build packages
         run: yarn build
 
@@ -34,6 +39,11 @@ jobs:
     needs: Setup
     runs-on: ubuntu-latest
     steps:
+      - name: Enable node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
       - name: Lint types and code
         run: yarn lint
 
@@ -41,5 +51,10 @@ jobs:
     needs: Setup
     runs-on: ubuntu-latest
     steps:
+      - name: Enable node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
       - name: Run tests
         run: yarn test
