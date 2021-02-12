@@ -28,4 +28,4 @@ jobs:
       - uses: snow-actions/line-notify@v1.0.0
         with:
           access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
-          message: ${{steps.pr.outputs.reviewer}}+" さんにレビューのお願いが届いています。("+${{steps.pr.outputs.pr-number}}+")"
+          message: '@${{steps.pr.outputs.reviewer}} さんにレビューのお願いが届いています。(#${{steps.pr.outputs.pr-number}})'
