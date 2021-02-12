@@ -7,10 +7,10 @@
     "build": "rm -rf ./build && NODE_ENV=production next build",
     "start": "next start -p 8080",
     "lint": "eslint -c .eslintrc.json src/** --ext .ts,.tsx",
-    "test": "jest ./__tests__",
+    "test": "jest ./tests/components/ ./tests/pages/",
     "storybook": "rm -rf ./node_modules/.cache && start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "puppeteer-storyshots": "jest ./storyshots"
+    "puppeteer-storyshots": "jest ./tests/storyshots"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.4",
@@ -66,8 +66,8 @@
       "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
     },
     "testMatch": [
-      "**/__tests__/**/*.test.(ts|tsx)",
-      "**/storyshots/*.(ts|tsx)"
+      "**/tests/**/*.test.(ts|tsx)",
+      "**/tests/storyshots/*.(ts|tsx)"
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/jest.setup.ts"

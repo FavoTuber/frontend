@@ -1,16 +1,11 @@
 import React from 'react';
 import { Link, Box, Image, Heading } from '@chakra-ui/react';
+import { Video } from 'models/video';
 
-type Props = {
-  linkUrl: string;
-  thumbnailUrl: string;
-  title: string;
-};
-
-const MovieCard: React.FC<Props> = ({ linkUrl, thumbnailUrl, title }) => {
+const VideoCard: React.FC<Video> = ({ id, thumbnailUrl, title }) => {
   return (
     <Box w="full" overflow="hidden">
-      <Link href={linkUrl}>
+      <Link href={'/video/' + id}>
         <Box>
           <Image src={thumbnailUrl} alt={title} />
         </Box>
@@ -24,4 +19,4 @@ const MovieCard: React.FC<Props> = ({ linkUrl, thumbnailUrl, title }) => {
   );
 };
 
-export default MovieCard;
+export default VideoCard;
