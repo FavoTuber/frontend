@@ -18,7 +18,6 @@ const HeaderNav: React.FC = () => {
       color={useColorModeValue('text.light', 'text.dark')}
     >
       <Logo />
-
       <Menu />
     </Flex>
   );
