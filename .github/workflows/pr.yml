@@ -9,7 +9,7 @@ on:
       - develop
 
 jobs:
-  Setup:
+  PR:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,38 +23,11 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-  Build:
-    needs: Setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Enable node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
-      - name: Build packages
-        run: yarn build
-
-  ESLint:
-    needs: Setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Enable node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
       - name: Lint types and code
         run: yarn lint
 
-  Test:
-    needs: Setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Enable node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
+      - name: Build packages
+        run: yarn build
 
       - name: Run tests
         run: yarn test
