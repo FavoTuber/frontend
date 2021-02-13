@@ -3,6 +3,7 @@ import Head from 'next/head';
 import customTheme from 'theme';
 import HeaderNav from 'components/Header/Navigation';
 import { ChakraProvider } from '@chakra-ui/react';
+import { RecoilRoot } from 'recoil';
 
 interface Props {
   pageProps: any; // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -24,8 +25,10 @@ export default class App extends React.Component<Props> {
           />
         </Head>
         <ChakraProvider theme={customTheme}>
-          <HeaderNav />
-          <Component {...pageProps} />
+          <RecoilRoot>
+            <HeaderNav />
+            <Component {...pageProps} />
+          </RecoilRoot>
         </ChakraProvider>
       </>
     );
