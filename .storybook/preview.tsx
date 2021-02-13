@@ -12,6 +12,16 @@ import {
 import { FiMoon, FiSun } from 'react-icons/fi';
 import { StoryContext } from '@storybook/react';
 
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+
+export const parameters = {
+  viewport: {
+    viewports: {
+      ...INITIAL_VIEWPORTS,
+    },
+  },
+};
+
 export const globalTypes = {};
 
 const ColorModeToggleBar = () => {
