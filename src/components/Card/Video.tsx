@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Box, Image, Heading, AspectRatio } from '@chakra-ui/react';
+import { Link, Box, Img, Heading, AspectRatio } from '@chakra-ui/react';
 import { Video } from 'models/video';
 
 const VideoCard: React.FC<Video> = ({ id, thumbnailUrl, title }) => {
@@ -8,7 +8,7 @@ const VideoCard: React.FC<Video> = ({ id, thumbnailUrl, title }) => {
       <Link href={'/video/' + id}>
         <AspectRatio ratio={16 / 9}>
           <Box>
-            <Image w="100%" src={thumbnailUrl} alt={title} fallbackSrc="/image/noimg.svg" />
+            <Img src={thumbnailUrl} alt={title} />
           </Box>
         </AspectRatio>
         <Box>
