@@ -5,7 +5,7 @@ const Logo: React.FC = () => {
   return (
     <Flex align="center" mx={6} my={{ base: 2, md: 0 }} p={6}>
       <Image
-        h="28px"
+        boxSize="28px"
         src="/logo/icon.svg"
         fallbackSrc="/image/noimg.svg"
         pointerEvents="none"
