@@ -3,6 +3,7 @@ import { useColorMode, useColorModeValue, Flex, Box, Text, Link, Icon } from '@c
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { FiHome, FiMoon, FiSun } from 'react-icons/fi';
 import { keyframes } from '@emotion/react';
+import LoginButton from './LoginButton';
 
 const Menu: React.FC = () => {
   const fadeIn = keyframes`
@@ -63,6 +64,7 @@ const Menu: React.FC = () => {
               {colorMode == 'light' ? 'Dark' : 'Light'}
             </Text>
           </Link>
+          <LoginButton />
         </Flex>
       </Box>
     </>
