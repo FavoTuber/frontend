@@ -4,19 +4,28 @@ import { Video } from 'models/video';
 
 const VideoCard: React.FC<Video> = ({ id, thumbnailUrl, title }) => {
   return (
-    <Box w="full" overflow="hidden">
-      <Link href={'/video/' + id}>
+    <Box w="100%">
+      <Box>
         <AspectRatio ratio={16 / 9}>
-          <Box>
-            <Img src={thumbnailUrl} alt={title} />
-          </Box>
+          <Link href={'/video/' + id} variant="image">
+            <Box>
+              <Img
+                src={thumbnailUrl}
+                alt={`${title} のサムネイル画像`}
+                borderRadius="base"
+                pointerEvents="none"
+                _selection={{ bgColor: 'transparent' }}
+              />
+            </Box>
+          </Link>
         </AspectRatio>
-        <Box>
-          <Heading size="card" noOfLines={2}>
-            {title}
-          </Heading>
-        </Box>
-      </Link>
+      </Box>
+
+      <Box>
+        <Heading size="card" noOfLines={2}>
+          {title}
+        </Heading>
+      </Box>
     </Box>
   );
 };
