@@ -30,8 +30,24 @@ function defaultVariant(props: Dict): Dict {
   };
 }
 
+function imageVariant(props: Dict): Dict {
+  return {
+    color: mode('text.light', 'text.dark')(props),
+    _hover: {
+      opacity: '0.7',
+      transition: 'all 0.3s ease-out',
+    },
+    _focus: {
+      boxShadow: 'focus',
+      borderRadius: 'base',
+      transform: 'scale(1.04,1.04)',
+    },
+  };
+}
+
 const variants = {
   default: defaultVariant,
+  image: imageVariant,
 };
 
 const defaultProps = {
