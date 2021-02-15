@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    if: contains(github.event.pull_request.labels.*.name, '[Preview] storybook')
+    if: contains(toJson(github.event.pull_request), '[Preview] storybook')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
