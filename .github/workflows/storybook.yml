@@ -27,5 +27,5 @@ jobs:
         uses: google-github-actions/upload-cloud-storage@main
         with:
           credentials: ${{ secrets.GCP_CREDENTIALS }}
-          path: /storybook-static
+          path: ./storybook-static
           destination: storybook-preview
