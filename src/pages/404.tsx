@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Box, Heading, Img, Text } from '@chakra-ui/react';
+import { Container, Box, Heading, Text } from '@chakra-ui/react';
 
 const NotFound: React.FC = () => {
   return (
