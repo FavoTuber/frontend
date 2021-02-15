@@ -57,3 +57,10 @@ jobs:
 
       - name: Delete storybook preview bucket
         run: gsutil rm -r gs://storybook-preview/pr_${{github.event.pull_request.number}}
+
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@master
+        with:
+          message: |
+            ✅ Clean up was successful.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
