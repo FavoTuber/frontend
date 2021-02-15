@@ -45,7 +45,8 @@
         "selector": "parameter",
         "format": ["camelCase"]
       }
-    ]
+    ],
+    "@typescript-eslint/no-unused-vars": "error"
   },
   "overrides": [
     {
