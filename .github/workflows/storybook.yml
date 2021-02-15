@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    if: ${{ github.event.label.name == "[Preview] storybook 📚" }}
+    if: contains(github.event.pull_request.labels.*.name, '[Preview] storybook')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
