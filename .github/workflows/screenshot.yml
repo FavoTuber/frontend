@@ -1,0 +1,63 @@
+name: Create screenshots
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  Screen-Shot:
+    if: ${{ contains(toJson(github.event.pull_request.labels), '[Preview] Screenshot') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Enable node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Install `http-server`
+        run: yarn add -D http-server
+
+      - name: Build storybook
+        run: yarn build-storybook
+
+      - name: Generate screenshots
+        run: |
+          yarn run http-server storybook-static -p 6006 &
+          yarn puppeteer-storyshots
+          kill $!
+
+      - name: Compress the folder
+        uses: montudor/action-zip@v0.1.1
+        with:
+          args: zip -qq -r output.zip ./src/tests/storyshots/__image_snapshots__
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: screenshots.zip
+          path: output.zip
+          retention-days: 1
+
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@master
+        with:
+          message: |
+            Hi there :wave:
+
+            I've generated screenshots! Please check out the output below:
+            ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Remove label
+        uses: buildsville/add-remove-label@v1
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          label: |
+            [Preview] Screenshot :camera:
+          type: remove
