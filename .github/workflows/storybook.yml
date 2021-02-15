@@ -6,7 +6,7 @@ on:
 
 jobs:
   Preview-Deploy:
-    if: ${{ contains(toJson(github.event.pull_request.labels), '[Preview] storybook') && github.event.action != 'closed' }}
+    if: ${{ contains(toJson(github.event.pull_request.labels), '[Preview] Storybook') && github.event.action != 'closed' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -46,7 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   Clean-Up:
-    if: ${{ contains(toJson(github.event.pull_request.labels), '[Preview] storybook') && github.event.action == 'closed' }}
+    if: ${{ contains(toJson(github.event.pull_request.labels), '[Preview] Storybook') && github.event.action == 'closed' }}
     runs-on: ubuntu-latest
     steps:
       - name: Set up Cloud SDK
