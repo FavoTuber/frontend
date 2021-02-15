@@ -28,8 +28,8 @@ jobs:
 
       - name: Generate screenshots
         run: |
-          yarn run http-server storybook-static -p 6006 &
-          yarn puppeteer-storyshots
+          yarn run http-server storybook-static -p 6006 > /dev/null &
+          yarn puppeteer-storyshots --ci
           kill $!
 
       - name: Compress the folder
