@@ -1,0 +1,30 @@
+name: Storybook preview deploy
+
+on:
+  pull_request:
+    types: labeled
+
+jobs:
+  build:
+    if: ${{ github.event.label.name == "[Preview] storybook 📚" }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Enable node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build storybook
+        run: yarn build-storybook
+
+      - id: upload-files
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          path: /storybook-static
+          destination: storybook-preview
