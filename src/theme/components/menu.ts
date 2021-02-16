@@ -6,7 +6,7 @@ const parts = ['button', 'list', 'item', 'divider'];
 
 function headerVariant(props: Dict): Dict {
   return {
-    button: { p: 2 },
+    button: { p: 2, mx: [8, 6, 4] },
     list: {
       p: 0,
       zIndex: 1,
