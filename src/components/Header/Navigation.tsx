@@ -2,7 +2,7 @@ import React from 'react';
 import { useColorModeValue, Flex } from '@chakra-ui/react';
 
 import Logo from './Logo';
-import Menu from './Menu';
+import DropdownMenu from './DropdownMenu';
 
 const HeaderNav: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const HeaderNav: React.FC = () => {
       color={useColorModeValue('text.light', 'text.dark')}
     >
       <Logo />
-      <Menu />
+      <DropdownMenu />
     </Flex>
   );
 };
