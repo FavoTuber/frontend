@@ -7,8 +7,6 @@ about: Development plan for FavoTuber team
 
 ## ✅ Coding Task
 
-- [ ] add(theme)
-- [ ] delete(ci)
 - [ ]
 
 ## 🤖 Test plan
