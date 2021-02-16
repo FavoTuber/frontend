@@ -2,7 +2,7 @@ name: Storybook preview deploy
 
 on:
   pull_request:
-    types: [opened, labeled, synchronize, closed]
+    types: [labeled, synchronize, closed]
 
 jobs:
   Preview-Deploy:
