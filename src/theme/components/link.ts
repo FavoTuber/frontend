@@ -17,15 +17,14 @@ const sizes = {
 
 function defaultVariant(props: Dict): Dict {
   return {
+    borderRadius: 'base',
     color: mode('text.light', 'text.dark')(props),
     _hover: {
-      bgColor: mode('componentBg.light', 'componentBg.dark')(props),
-      borderRadius: 'base',
+      bgColor: 'transparent',
     },
     _focus: {
-      boxShadow: 'none',
-      bgColor: mode('componentBg.light', 'componentBg.dark')(props),
-      borderRadius: 'base',
+      boxShadow: 'focus',
+      bgColor: 'transparent',
     },
   };
 }
