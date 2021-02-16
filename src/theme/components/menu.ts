@@ -17,12 +17,13 @@ function headerVariant(props: Dict): Dict {
     list: {
       p: 0,
       zIndex: 1,
+      fontSize: ['0.9em', '0.95em', '1.0em'],
       boxShadow: 'none',
       borderRadius: 'base',
       bgColor: mode('bodyBg.light', 'bodyBg.dark')(props),
     },
     item: {
-      p: 6,
+      p: [5, 6],
       fontWeight: 'bold',
       _focus: {
         bgColor: mode('componentBg.light', 'componentBg.dark')(props),
