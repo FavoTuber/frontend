@@ -3,8 +3,8 @@ import { Flex, Link, Img, Heading } from '@chakra-ui/react';
 
 const Logo: React.FC = () => {
   return (
-    <Link href="/">
-      <Flex align="center" mx={6} my={{ base: 2, md: 0 }} p={6}>
+    <Link href="/" mx={6} my={{ base: 2, md: 0 }} p={2}>
+      <Flex align="center">
         <Img
           boxSize="28px"
           src="/logo/icon.svg"
