@@ -33,7 +33,7 @@ function defaultVariant(props: Dict): Dict {
 const variants = {
   default: defaultVariant,
   headerNav: {
-    color: 'pink',
+    color: 'pink.1000',
   },
 };
 
