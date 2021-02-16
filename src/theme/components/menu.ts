@@ -8,7 +8,7 @@ function headerVariant(props: Dict): Dict {
   return {
     button: {
       p: 1,
-      mx: [8, 6, 4],
+      mx: [8, 6],
       _focus: {
         boxShadow: 'focus',
         borderRadius: 'circle',
