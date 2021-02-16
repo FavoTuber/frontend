@@ -16,7 +16,11 @@ const colors = {
     light: 'rgba(31, 31, 31)',
     dark: 'rgba(241, 241, 241)',
   },
-  pink: '#FC9D9D',
+  pink: {
+    1000: 'rgba(252, 157, 157, 1)',
+    700: 'rgba(252, 157, 157, 0.7)',
+    500: 'rgba(252, 157, 157, 0.5)',
+  },
 };
 
 export default colors;
