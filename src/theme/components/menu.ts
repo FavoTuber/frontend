@@ -22,6 +22,7 @@ function headerVariant(props: Dict): Dict {
       bgColor: mode('bodyBg.light', 'bodyBg.dark')(props),
     },
     item: {
+      p: 6,
       fontWeight: 'bold',
       _focus: {
         bgColor: mode('componentBg.light', 'componentBg.dark')(props),
