@@ -31,10 +31,10 @@ const DropdownMenu: React.FC = () => {
         <MenuItem icon={<Icon as={FiLogOut} fontSize="1.5em" />}>ログアウト</MenuItem>
         <MenuDivider />
         <MenuItem
-          icon={<Icon as={colorMode == 'light' ? FiMoon : FiSun} fontSize="1.5em" />}
+          icon={<Icon as={colorMode === 'light' ? FiMoon : FiSun} fontSize="1.5em" />}
           onClick={toggleColorMode}
         >
-          {colorMode == 'light' ? 'ダークモード' : 'ライトモード'}
+          {colorMode === 'light' ? 'ダークモード' : 'ライトモード'}
         </MenuItem>
       </MenuList>
     </Menu>
