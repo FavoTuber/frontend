@@ -22,7 +22,7 @@ const VideoCard: React.FC<Video> = ({ id, thumbnailUrl, title }) => {
       </Box>
 
       <Box>
-        <Heading size="card" noOfLines={2}>
+        <Heading noOfLines={2} my={2} fontSize={['0.85em', '0.9em', '0.95em', '1.0em']}>
           {title}
         </Heading>
       </Box>
