@@ -8,6 +8,7 @@
     "start": "next start -p 8080",
     "lint": "eslint -c .eslintrc.json src/** --ext .ts,.tsx",
     "test": "jest ./tests/components/ ./tests/pages/",
+    "format": "prettier --config .prettierrc.json --write '**/*.tsx'",
     "storybook": "rm -rf ./node_modules/.cache && start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "puppeteer-storyshots": "jest ./tests/storyshots"
