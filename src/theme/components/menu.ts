@@ -6,15 +6,24 @@ const parts = ['button', 'list', 'item', 'divider'];
 
 function headerVariant(props: Dict): Dict {
   return {
-    button: { p: 2, mx: [8, 6, 4] },
+    button: {
+      p: 1,
+      mx: 6,
+      _focus: {
+        boxShadow: 'focus',
+        borderRadius: 'circle',
+      },
+    },
     list: {
       p: 0,
       zIndex: 1,
+      fontSize: ['0.9em', '0.95em', '1.0em'],
       boxShadow: 'none',
       borderRadius: 'base',
       bgColor: mode('bodyBg.light', 'bodyBg.dark')(props),
     },
     item: {
+      p: [5, 6],
       fontWeight: 'bold',
       _focus: {
         bgColor: mode('componentBg.light', 'componentBg.dark')(props),
