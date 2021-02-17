@@ -12,6 +12,7 @@ const HeaderNav: React.FC = () => {
       justify="space-between"
       wrap="wrap"
       w="100%"
+      my={{ base: 6, md: 2 }}
       py={{ base: 0, md: 5 }}
       px={{ base: 0, md: '5vw' }}
       bg="transparent"
