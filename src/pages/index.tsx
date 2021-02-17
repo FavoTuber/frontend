@@ -46,7 +46,7 @@ const Home: React.FC = () => {
       <Container>
         <Grid
           templateColumns={['repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(4, 1fr)', 'repeat(5, 1fr)']}
-          gap={[4, 4, 6, 6]}
+          gap={[4, 4, 8, 8]}
         >
           {[...videos, ...videos, ...videos, ...videos].map((video: Video) => (
             <GridItem colSpan={1} key={video.id}>
