@@ -25,6 +25,7 @@
   },
   "plugins": ["react-hooks", "react", "@typescript-eslint", "prettier"],
   "extends": [
+    "./node_modules/gts/",
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -35,6 +36,7 @@
     "prettier/@typescript-eslint"
   ],
   "rules": {
+    "node/no-extraneous-import": "off",
     "react/prop-types": "off",
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
@@ -46,14 +48,22 @@
         "format": ["camelCase"]
       }
     ],
-    "@typescript-eslint/no-unused-vars": "error"
+    "node/no-unpublished-import": "off"
   },
   "overrides": [
     {
       "files": ["*.js"],
       "rules": {
         "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/explicit-function-return-type": "off"
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": false,
+            "optionalDependencies": false
+          }
+        ]
       }
     }
   ]
