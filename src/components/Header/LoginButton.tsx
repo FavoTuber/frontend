@@ -1,11 +1,26 @@
 import React from 'react';
-import { Button } from '@chakra-ui/react';
+import { Box, Button } from '@chakra-ui/react';
+import { keyframes } from '@emotion/react';
+import firebase from 'utils/Firebase';
+
+const login = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider);
+};
 
 const LoginButton: React.FC = () => {
+  const fadeIn = keyframes`
+  0% { opacity:0; }
+  90% { opacity:0; }
+  100% { opacity:1; }
+`;
+
   return (
-    <Button border="1px" onClick={() => alert('ハゲ')}>
-      ログイン
-    </Button>
+    <Box h="40px">
+      <Button animation={`${fadeIn} ease-in 1s`} border="1px" onClick={login} p={1} h="36px">
+        ログイン
+      </Button>
+    </Box>
   );
 };
 
