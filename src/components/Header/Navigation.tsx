@@ -1,10 +1,14 @@
 import React from 'react';
-import { useColorModeValue, Flex } from '@chakra-ui/react';
+import { useColorModeValue, Flex, Box } from '@chakra-ui/react';
+import { useAuthenticate } from 'hooks/auth';
 
 import Logo from './Logo';
+import LoginButton from './LoginButton';
 import DropdownMenu from './DropdownMenu';
 
 const HeaderNav: React.FC = () => {
+  const user = useAuthenticate();
+
   return (
     <Flex
       as="nav"
@@ -19,7 +23,7 @@ const HeaderNav: React.FC = () => {
       color={useColorModeValue('text.light', 'text.dark')}
     >
       <Logo />
-      <DropdownMenu />
+      {user === null ? <LoginButton /> : <DropdownMenu />}
     </Flex>
   );
 };
