@@ -11,13 +11,13 @@ const login = () => {
 const LoginButton: React.FC = () => {
   const fadeIn = keyframes`
   0% { opacity:0; }
-  90% { opacity:0; }
+  99% { opacity:0; }
   100% { opacity:1; }
 `;
 
   return (
     <Box h="40px">
-      <Button animation={`${fadeIn} ease-in 1s`} border="1px" onClick={login} p={1} h="36px">
+      <Button animation={`${fadeIn} ease-in 1.5s`} border="1px" onClick={login} p={1} h="36px">
         ログイン
       </Button>
     </Box>
