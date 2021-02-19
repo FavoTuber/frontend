@@ -4,6 +4,8 @@ import customTheme from 'theme';
 import HeaderNav from 'components/Header/Navigation';
 import { ChakraProvider } from '@chakra-ui/react';
 import { RecoilRoot } from 'recoil';
+import 'utils/Firebase';
+import 'hooks/auth';
 
 interface Props {
   pageProps: any; // eslint-disable-line @typescript-eslint/no-explicit-any

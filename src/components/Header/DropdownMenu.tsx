@@ -10,9 +10,15 @@ import {
   Img,
 } from '@chakra-ui/react';
 import { FiUser, FiLogOut, FiSettings, FiMoon, FiSun } from 'react-icons/fi';
+import firebase from 'utils/Firebase';
+
+const logout = () => {
+  firebase.auth().signOut();
+};
 
 const DropdownMenu: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Menu closeOnSelect={false} variant="header">
       <MenuButton>
@@ -28,7 +34,9 @@ const DropdownMenu: React.FC = () => {
       <MenuList>
         <MenuItem icon={<Icon as={FiUser} fontSize="1.5em" />}>プロフィール</MenuItem>
         <MenuItem icon={<Icon as={FiSettings} fontSize="1.5em" />}>設定</MenuItem>
-        <MenuItem icon={<Icon as={FiLogOut} fontSize="1.5em" />}>ログアウト</MenuItem>
+        <MenuItem icon={<Icon as={FiLogOut} fontSize="1.5em" />} onClick={logout}>
+          ログアウト
+        </MenuItem>
         <MenuDivider />
         <MenuItem
           icon={<Icon as={colorMode === 'light' ? FiMoon : FiSun} fontSize="1.5em" />}
