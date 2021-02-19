@@ -3,6 +3,7 @@ import Heading from './heading';
 import Link from './link';
 import Menu from './menu';
 import Container from './container';
+import Tooltip from './tooltip';
 
 export default {
   Button,
@@ -10,4 +11,5 @@ export default {
   Link,
   Menu,
   Container,
+  Tooltip,
 };
