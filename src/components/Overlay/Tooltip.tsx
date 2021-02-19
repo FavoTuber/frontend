@@ -8,7 +8,7 @@ type Props = {
 
 const HelpText: React.FC<Props> = ({ text }) => {
   return (
-    <Tooltip label={text} aria-label="A tooltip" placement="bottom">
+    <Tooltip label={text} aria-label={text} placement="bottom" defaultIsOpen>
       <AspectRatio ratio={1}>
         <Box borderRadius="circle">
           <Button
