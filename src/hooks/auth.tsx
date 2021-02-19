@@ -9,20 +9,19 @@ export const userState = atom<User>({
 });
 
 export const useAuthenticate = (): User => {
-  const [user, setUser] = useRecoilState(userState);
+  const [user, setUser] = useRecoilState<User>(userState);
 
   useEffect(() => {
     if (user) return;
 
     firebase.auth().onAuthStateChanged((u) => {
       if (u) {
-        console.log(u);
         setUser({ id: u.uid, displayName: u.displayName });
       } else {
         setUser(null);
       }
     });
-  }, []);
+  }, [setUser, user]);
 
   return user;
 };
