@@ -48,23 +48,15 @@
         "format": ["camelCase"]
       }
     ],
-    "node/no-unpublished-import": "off"
+    "node/no-unpublished-import": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": "error"
   },
   "overrides": [
     {
       "files": ["*.js"],
-      "rules": {
-        "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-unused-vars": "error",
-        "import/no-extraneous-dependencies": [
-          "error",
-          {
-            "devDependencies": false,
-            "optionalDependencies": false
-          }
-        ]
-      }
+      "rules": {}
     }
   ]
 }

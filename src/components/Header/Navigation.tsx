@@ -1,5 +1,5 @@
 import React from 'react';
-import { useColorModeValue, Flex, Box } from '@chakra-ui/react';
+import { useColorModeValue, Flex } from '@chakra-ui/react';
 import { useAuthenticate } from 'hooks/auth';
 
 import Logo from './Logo';
